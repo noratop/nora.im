@@ -1,40 +1,79 @@
-# Eleventy Skeleton
+<h1><a href="https://eleventywebstarter.netlify.app"><strong>Eleventy Web Starter</strong></a></h1>
 
-Inspired by [Possibly the Easiest Way to Run An SSG](https://css-tricks.com/possibly-the-easiest-way-to-run-an-ssg/).
+<em>Eleventy · Tailwind CSS · HTML · CSS · Javascript</em>
 
-No dependencies. No plugins. No preprocessors. Just make a static website.
+<a href="https://app.netlify.com/sites/eleventywebstarter/deploys"><img src="https://api.netlify.com/api/v1/badges/27819fce-1c2b-4f30-ab30-5c0769f9734e/deploy-status"></a>
 
-Out of the box Netlify deploys. Includes mini CSS reset by Eric Meyer.
+## Contents 	
 
-## Increase your power levels
+- [Project overview](#project-overview)
+- [Getting started](#getting-started)
+	- [Install dependencies](#install-dependencies)
+	- [Working locally](#working-locally)
+	- [Creating a production build](#creating-a-production-build)
+- [Deployment](#deployment)
+- [Credits](#credits)
 
-1. [Add sass](https://egghead.io/lessons/11ty-add-sass-compiling-and-watch-for-changes-in-eleventy-11ty)
-3. [Add HTML templating](https://www.11ty.dev/docs/languages/)
-4. [Add JS transpilation/webkit](https://statickit.com/guides/eleventy-webpack)
-5. [Add favicons/device icons](https://www.favicon-generator.org/)
-6. [Add a sitemap](https://developers.google.com/search/docs/advanced/sitemaps/build-sitemap)
-7. [Configure eleventy](https://www.11ty.dev/docs/watch-serve/)
+---
 
-## Commands
+## Project Overview 
 
-These commands assume you're in a unix environment, but they should work anywhere `npx`/`npm` is available.
+- The project uses [Eleventy](https://11ty.dev) as a static site generator
+- Default templating is [Nunjucks](https://mozilla.github.io/nunjucks/) (can be changed)
+- PostCSS set up to handle:
+	- TailwindCSS
+	- CSS Imports
+	- Autoprefixer 
+- PurgeCSS to remove unused CSS (set up for TailwindCSS by default) in production
+- HTML minified in production
+- CSS inlined and minified in production
+- [esbuild](https://esbuild.github.io/) used to bundle and minify scripts
+- Document `<head>` crafted using [htmlhead.dev](https://htmlhead.dev)
 
-### Develop
+---
 
-```sh
-$ npx @11ty/eleventy --serve
+## Getting Started
+
+### Install dependencies
+
+```
+npm install
 ```
 
-### Build
+### Working locally
+Starts watch tasks to compile when changes detected
 
-```sh
-$ npx @11ty/eleventy
+```
+npm start
 ```
 
-## Netlify
+### Creating a production build
+Minify HTML, minify JS, inline and minify CSS.
 
-First, enable your Eleventy Skeleton repo on Netlify's interface.
+``` 
+npm run build
+```
 
-When prompted, clear the `build` and `publish` fields (that's what your `netlify.toml` is for). Then set your deploy branch (e.g., `main`).
+---
 
-Now each time you push to your deploy branch you'll also deploy your most recent changes. 🎉
+## Deployment 
+
+You can host the production output on any web server or service you like and upload it via any method, it'll work. 
+
+If you don't have an existing place to host your site you should have a look at [Netlify](https://www.netlify.com), I can't recommend it enough. To get started you can hit the button below.
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/chrissy-dev/eleventy-web-starter)
+
+---
+
+#### Credits 
+
+- [Eleventy](https://11ty.dev)
+- [TailwindCSS](https://tailwindcss.com/)
+- [PostCSS](https://github.com/postcss)
+	- Autoprefixer
+	- PostCSS Import
+- [esbuild](https://esbuild.github.io/)
+- [Luxon](https://moment.github.io/luxon/)
+- [NPM Run All](https://www.npmjs.com/package/npm-run-all)
+- [HTML Minifier](https://www.npmjs.com/package/html-minifier)
