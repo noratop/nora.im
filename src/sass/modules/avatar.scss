@@ -1,0 +1,65 @@
+@use 'colors.scss' as *;
+@use 'mixins.scss' as *;
+@use 'animation.scss';
+
+.avatar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &_svg {
+    max-width: 160px;
+    fill: $avatar;
+
+    &_st1 {
+      filter: url(#Adobe_OpacityMaskFilter);
+    }
+    &_st3 {
+      mask: url(#SVGID_1_);
+    }
+    &_st4 {
+      filter: url(#Adobe_OpacityMaskFilter_1_);
+    }
+    &_st5 {
+      mask: url(#SVGID_2_);
+    }
+
+    &_st0 {
+      fill: none;
+      stroke: $avatar;
+      stroke-linecap: round;
+      stroke-width: 1;
+      stroke-dasharray: 150;
+      stroke-dashoffset: 150;
+      animation: dash 1.8s linear forwards;
+    }
+  }
+
+  &_eyebrows path {
+    @include sketch(4px, 1.6s);
+  }
+  &_beard path {
+    @include sketch(-7px, 2.2s);
+  }
+  &_hair path {
+    @include sketch(-5px, 2.6s);
+  }
+  &_beardtop path {
+    @include sketch(-4px, 2.8s);
+  }
+  &_moustach path {
+    @include sketch(-4px, 3.2s);
+  }
+
+  &_eye_left {
+    transform-box: fill-box;
+    transform-origin: 50% 80%;
+    animation: dash 1.8s linear forwards, blink-left 15s linear 5s infinite;
+  }
+
+  &_eye_right {
+    transform-box: fill-box;
+    transform-origin: 50% 80%;
+    animation: dash 1.8s linear forwards, blink-right 15s linear 5s infinite;
+  }
+}

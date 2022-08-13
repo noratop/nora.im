@@ -1,0 +1,26 @@
+@use 'mixins.scss' as *;
+@use 'colors.scss' as *;
+
+.text-content {
+  width: 100%;
+  text-align: center;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 100;
+  font-size: 8px;
+
+  @include over-mobile {
+    font-size: 12px;
+  }
+}
+
+.click-here {
+  font-size: smaller;
+}
+
+.gray {
+  color: $gray;
+}
+
+.gold {
+  color: $gold;
+}

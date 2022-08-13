@@ -1,0 +1,31 @@
+@use 'modules/avatar.scss';
+@use 'modules/text-content.scss';
+
+// Paul Irish Box-Model
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.main {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+}
+
+a {
+  text-decoration: none;
+  cursor: default;
+}
