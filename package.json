@@ -7,7 +7,7 @@
     "clean": "del dist",
     "watch:sass": "sass  --no-source-map --watch src/sass/styles.scss:dist/css/styles.css",
     "watch:eleventy": "eleventy --serve",
-    "build:sass": "NODE_ENV=production sass  --no-source-map src/sass:dist/css",
+    "build:sass": "NODE_ENV=production sass  --no-source-map src/sass/styles.scss:dist/css/styles.css",
     "build:eleventy": "ELEVENTY_ENV=production eleventy",
     "postbuild": "postcss dist/css/*.css -u autoprefixer cssnano -r --no-map",
     "start": "npm-run-all build:sass --parallel watch:*",
