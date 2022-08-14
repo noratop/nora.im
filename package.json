@@ -7,11 +7,11 @@
     "clean": "del dist",
     "watch:sass": "sass  --no-source-map --watch src/sass/styles.scss:dist/css/styles.css",
     "watch:eleventy": "eleventy --serve",
-    "build:sass": "NODE_ENV=production sass  --no-source-map src/sass/styles.scss:dist/css/styles.css",
+    "build:sass": "sass  --no-source-map src/sass/styles.scss:src/_includes/styles.css",
     "build:eleventy": "ELEVENTY_ENV=production eleventy",
-    "postbuild": "postcss dist/css/*.css -u autoprefixer cssnano -r --no-map",
+    "build:postprocess": "postcss src/_includes/*.css -u autoprefixer cssnano -r --no-map",
     "start": "npm-run-all build:sass --parallel watch:*",
-    "build": "npm-run-all build:sass build:eleventy"
+    "build": "npm-run-all clean build:sass build:postprocess build:eleventy"
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",

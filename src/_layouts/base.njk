@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        {% include "head.njk" %}
-        <link rel="stylesheet" href="/css/styles.css">
+  <head>
+    {% include "head.njk" %}
+    {% if site.env %}
+      <!-- Capture the CSS cont
+            ent as a Nunjucks variable -->
+      {% set css %}{% include "styles.css" %}{% endset %}
+      <style>
+        {{css | safe}}
+      </style>
+    {% else %}
+      <link rel="stylesheet" href="/css/styles.css">
+    {% endif %}
 
-        <!-- Try and serve Google Fonts in the most efficent way possible -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <noscript>
-            <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
-        </noscript>
-    </head>
-    <body>
-        {{ content | safe }}
-    </body>
+    <!-- Try and serve Google Fonts in the most efficent way possible -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    </noscript>
+  </head>
+  <body>
+    {{ content | safe }}
+  </body>
 </html>
